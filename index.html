@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<!--
+ *  Copyright (c) 2017 Dialogic Inc
+ *  
+ *  Author: Dan Wolanski
+-->
+<html>
+<head>
+
+  <meta charset="utf-8">
+  <meta name="description" content="WebRTC Plumbing test page">
+  <meta name="viewport" content="width=device-width, user-scalable=yes, initial-scale=1, maximum-scale=1">
+  <meta itemprop="description" content="Plumbing WebRTC test page">
+  <meta itemprop="image" content="images/favicon.ico">
+  <meta itemprop="name" content="WebRTC Plumbing test page">
+  <meta name="mobile-web-app-capable" content="yes">
+  <meta id="theme-color" name="theme-color" content="#ffffff">
+
+  <base target="_blank">
+
+  <title>WebRTC Plumbing Test Page</title>
+
+  <link rel="icon" sizes="192x192" href="images/favicon.ico">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,500,700" rel="stylesheet" type="text/css">
+  <link href="//fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="css/theme.css" />
+  <link rel="stylesheet" href="css/main.css" />
+
+<style>
+    html, body {
+      width: 100%;
+      height: 100%;
+      margin: 0px;
+    }
+    
+    </style>
+</head>
+
+<body>
+
+  <div id="container">
+
+    <h1>WebRTC Plumbing Test Page</h1>
+    <div id="ButtonsContainer">
+       <button class="devicesButton" id="devicesButton" >Devices</button>
+        <button class="constraintsButton" id="constraintsButton" >Constraints</button>
+        <button class="GUMButton" id="GUMButton" >GUM</button>
+        <button class="LocalVideoButton" id="LocalVideoButton" >Local Video</button>
+    </div>
+      
+      
+      
+    <div id="deviceSelectorContainer" class="deviceSelectorContainer">
+     <div id="deviceSelector" style="display:none">
+         <hr>
+           <div class="select">
+                <label for="audioSource">Audio input source: </label><br/>
+               <select id="audioSource"></select><br/>
+            </div>
+            <div class="select">
+                <label for="videoSource">Video source: </label><br/>
+                <select id="videoSource"></select><br/>
+            </div>
+          <div class="select">
+                <label for="audioOutput">Audio output destination: </label><br/>
+              <select id="audioOutput"></select><br/>
+            </div>
+         <label>Note: Full device names will not show until MediaStreams active or permission is granted</label>
+         <p>Based on - <a href="https://webrtc.github.io/samples/src/content/devices/input-output/">WebRTC Sources Sample</a></p>
+        </div>
+        
+    </div>
+      
+ 
+    <div id="GUMConstrainsContainer" class="GUMConstrainsContainer">
+       <div id="ConstraintsSelector" style="display:none">
+           <hr>
+                <div class="select">
+                    <label for="videoSize">Prefered Video Size: </label>
+                    <select id="videoSize"></select><br/>
+                    <label><input type="checkbox" id="sendAudio" name="sendAudio" checked >Send Audio</label><br>
+                    <label><input type="checkbox" id="sendVideo" name="sendVideo" checked >Send Video</label><br>
+                    
+            </div>
+        </div>    
+    </div>
+    
+    
+  <div id="LocalVideoContainer" class="LocalVideoContainer" style="display:block" >
+        <video class="localVideo" id="localVideo" autoplay muted controls></video>
+  </div>
+      
+      
+</div>  
+<script src="https://webrtc.github.io/adapter/adapter-latest.js"></script>
+  <script src="js/common.js"></script>
+  <script src="js/main.js"></script>
+  <script src="js/third_party/graph.js"></script>
+
+  <script src="js/lib/ga.js"></script>
+      
+    
+    </body>
+</html>
